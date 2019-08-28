@@ -1,6 +1,7 @@
 const express=require('express')
 const session = require('express-session')
 const app=express()
+const SERVER_PORT=_process.env.PORT || 8787;
 const {sequelize,User,note1}=require('./db')
 const passport=require('./setuppass')
 const methodOverride = require('method-override')
@@ -105,7 +106,7 @@ app.get('/logout',(req,res)=>{
 })
 module.exports=note1
 
-sequelize.sync().then(()=>{app.listen(8787,()=>{
+sequelize.sync().then(()=>{app.listen(SERVER_PORT,()=>{
     console.log("server started at 8787")
     })
 })
