@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Notebook</title>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   <script src="/Notebook/public/notebook.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>
+       <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+  <a class="nav-item nav-link" href="/logout">logout</a>
+    </div>
+  </div>
+</nav>
+ <form id="taskform" action="/home" method="POST">
+    <p><input placeholder="Date,Title" name="title" id="title"></p>
+    <p><textarea name="body" id="body" cols="30" rows="1"></textarea></p>
+    <button type="submitt" class="btn btn-warning">Write</button>
+  </form>
+  <br>
+  {{#each notes}}
+  <div class="card" style="width: 18rem;">
+  <div class="card-body">
+  <h5 class="card-subtitle mb-2 text-muted">{{title}}</h5>
+  <p class="card-text">{{body}}</p>
+  <a href="/{{id}}/delete" >delete</a>
+  </div>
+</div>
+{{/each}}
+ <br>
+
+ <br>
+ <br>
+</body>
+
+</html>

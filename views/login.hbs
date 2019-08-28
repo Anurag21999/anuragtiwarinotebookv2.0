@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<style>
+	#d1{
+		{{!-- border: solid black 0.5px; --}}
+		width: 300px;
+		margin-left: 456px;
+		margin-top: 85px;
+	}
+	#username{
+	    font-family: cursive;
+		font-size: 20px;
+	}
+	#password{
+	    font-family: cursive;
+		font-size: 20px;
+	}
+	#Email{
+	    font-family: cursive;
+		font-size: 20px;
+	}
+	#s1{
+		font-family: cursive;
+		font-size: 53px;
+		padding-left: 106px;
+	}
+</style>
+<body>
+	 <nav id="nav" class="navbar navbar-expand-lg navbar-light bg-light">
+  <div   class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link">Welcome to  Notebook</a>
+    </div>
+  </div>
+</nav>
+
+<div id="d1">
+  <form action="/login" method="POST">
+   <h2 id="s1">Log in</h2>
+  
+		<p>
+			<label id="username" for="Username" class="floatLabel">Username</label>
+			<input  placeholder="Anurag123" name="username" type="text">
+		</p>
+		<p>
+			<label id="password" for="password" class="floatLabel">Password</label>&nbsp;&nbsp;
+			<input placeholder="******" name="password" type="password">
+		</p>
+		<p>
+			<button type="submitt" class="btn btn-warning">Login</button>
+		</p>
+<p>Don't have a Notebook Account? <a href="/signup"> Sign up Now!</a></p>
+  </form>
+  </div>
+</body>
+</html>
