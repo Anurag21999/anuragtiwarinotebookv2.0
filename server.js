@@ -4,7 +4,6 @@ const app=express()
 const SERVER_PORT=_process.env.PORT || 8787;
 const {sequelize,User,note1}=require('./db')
 const passport=require('./setuppass')
-const methodOverride = require('method-override')
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 app.use(express.static(__dirname + '/public'));
@@ -22,7 +21,7 @@ app.use(
 // must come after session middleware
 app.use(passport.initialize())
 app.use(passport.session())
-app.use(methodOverride('_method'))
+
 
 app.get('/',(req, res) => res.render('front'))
 app.get('/signup', (req, res) => res.render('signin'))
