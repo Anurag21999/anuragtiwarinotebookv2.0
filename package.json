@@ -20,7 +20,5 @@
     "sequelize": "^5.11.0",
     "sqlite3": "^4.0.9"
   },
-  "devDependencies": {
-    "handlebars-helper-css": "^0.1.0"
-  }
+  "devDependencies": {}
 }
