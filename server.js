@@ -1,12 +1,11 @@
 const express=require('express')
 const session = require('express-session')
 const app=express()
-const SERVER_PORT=_process.env.PORT || 8787;
+const SERVER_PORT= process.env.PORT || 8787;
 const {sequelize,User,note1}=require('./db')
 const passport=require('./setuppass')
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
-app.use(express.static(__dirname + '/public'));
 app.set('view engine','hbs')
 
 
