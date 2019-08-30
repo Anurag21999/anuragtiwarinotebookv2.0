@@ -22,8 +22,8 @@ app.use(passport.initialize())
 app.use(passport.session())
 
 
-app.get('/',(req, res) => res.render('front'))
-app.get('/signup', (req, res) => res.render('signin'))
+app.get('/',notLoggedIn,(req, res) => res.render('front'))
+app.get('/signup',notLoggedIn,(req, res) => res.render('signin'))
 app.post('/signup', (req, res) => {
   User.create({
     username: req.body.username,
@@ -40,7 +40,7 @@ app.post('/signup', (req, res) => {
     })
 })
 
-app.get('/login',(req,res)=>{
+app.get('/login',notLoggedIn,(req,res)=>{
     res.render('login')
 })
 
@@ -57,7 +57,7 @@ app.get('/login/facebook/callback', passport.authenticate('facebook', {
   failureRedirect: '/login'
 }))
   function checkLoggedIn(req, res, next) {
-    if (req.user) {
+    if (req.isAuthenticated()) {
       return next()
     }
     else{
@@ -65,7 +65,16 @@ app.get('/login/facebook/callback', passport.authenticate('facebook', {
     }
    
   }
-
+  function notLoggedIn(req, res, next) {
+    if (req.isAuthenticated()) {
+      return res.redirect('/home')
+    }
+    else{
+      next()
+    }
+   
+  }
+ 
 app.get('/home',checkLoggedIn,(req,res)=>{
     note1.findAll().then(notes=>{
         User.findAll().then(user=>{
