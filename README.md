@@ -9,8 +9,8 @@ http://notebokv1a.herokuapp.com/
 Express as a node.js server framework (v4.17.1)
 
 ## Database used
-database i used is sqlite3 browser which a very simple database to work with oon a project and pretty easy to launch via heroku.
-The sqlite verssion I used  is (v4.0.9)
+Database  used is sqlite3 browser which a very simple database to work with on a project and pretty easy to launch via heroku.
+The sqlite version  used  is (v4.0.9)
 
 
 ## Dependencies 
